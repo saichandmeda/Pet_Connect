@@ -1,0 +1,70 @@
+<div class="outer ">
+    <div class="container ">
+        <div id="r" class="row ">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3 ">
+                <div id="b" class="panel border bg-white">
+                    <div class="panel-heading ">
+                        <h3 class="pt-3 font-weight-bold ">Login</h3>
+                    </div>
+                    <div class="panel2 body" p-3>
+                        <form [formGroup]="loginForm">
+                            <div class="abc">
+                                <div id="fg" class="form-group">
+                                    <div class="input-field" [class.error]="loginForm.controls['userName'].dirty && loginForm.hasError('required','userName')">
+                                        <span class="fa fa-user p-2"></span>
+                                        <input formControlName="userName" type="text" style="width: 310px; height: 35px;" placeholder="Username">
+                                    </div>
+                                </div>
+                                <small *ngIf="loginForm.controls['userName'].dirty && loginForm.hasError('required','userName')" class="text-danger">*Username is required</small>
+                                <div class="form-group">
+                                    <div id="pwd" class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
+                                        <span class="fa fa-lock p-2"></span>
+                                        <input formControlName="password" [type]="type" style="width: 295px; height: 35px;" placeholder="Password">
+                                        <span (click)="hideShowPass()" class="fa {{eyeIcon}}">
+                                        </span>
+                                        <!-- <span class="p-viewer">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </span> -->
+                                        <!-- <input type="password" name="password" id="password" />
+                                        <i class="bi bi-eye-slash" id="togglePassword"></i> -->
+                                    </div>
+                                </div>
+                                <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Password is required</small>
+                                <!-- <small *ngIf="loginForm.controls['Password'].dirty && loginForm.hasError('required,Password')" class="text.danger">*Password is required</small> -->
+                                <div id="fi" class="form-inline" fr mt-4>
+                                   <a id="forget" class="font-weight-bold" href="forget">Forgot Password?</a> 
+                                </div>
+                                <button (click)="onSubmit()"  type="submit" class="btn btn-primary" style="width: 300px; height: 40px;">Login</button>
+                                <!-- [disabled]="loginForm.invalid" -->
+                                <div id="d" class="text-center  pt-4 text-muted">Don't have account? <a id="f" href="signup">Sign Up</a></div>
+                                <!-- <div class="text-center pt-4 text-muted">Don't have account? <a id="forget" routerLink="/signup">Sign Up</a></div> -->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="mx-3 my-2 py-2 border bg-white">
+                        <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.com%2F%3Fptid%3D19027681%26ptt%3D8%26fpts%3D0&ec=futura_hpp_co_si_001_p&ifkv=ASKXGp234KSGSoCw5zaUMoLqFUTqsv55rPP6N_9E89qotK7fgbpluhwG7nxrVSyLrIuWslDdcVozIg&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S2064615290%3A1707472133784078&theme=glif" target="_blank">
+                            <button style="width: 200px; height: 45px;" type="button" class="google-sign-in-button" >
+                                Sign up with Google
+                            </button>
+                        </a>
+                        
+                          
+                          <!-- <button type="button" class="google-sign-in-button" disabled>
+                            Sign in with Google
+                          </button> -->
+                    </div>
+                    <!-- <div class="mx-3 my-2 py-2 border bg-white">
+                        <div class="text-center py-3">
+                            <a id ="google" href="https://www.facebook.com" target="_blank" class="px-2"> </a>
+                            <a id ="google" href="https://www.facebook.com" target="_blank" class="px-2"> <img src="https://icons8.com/icon/ddJXF_L1PvL_/facebook" alt=""> </a>
+                            <a href="https://www.google.com" target="_blank" class="px-2"> <img src="https://icons8.com/icon/80449/internet" alt=""></a>
+                            <a href="https://www.google.com" target="_blank" class="px-2"> <img src="https://icons8.com/icon/17949/google" alt=""></a>
+                            <a href="https://www.github.com" target="_blank" class="px-2"> <img src="https://icons8.com/icon/17949/google" alt=""></a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
