@@ -37,8 +37,6 @@ export class SignupComponent {
     this.isText ? this.type="Text" : this.type = "password";
   }
 
-  onSubmit(){
-    if(this.signupForm.valid){
       
       console.log(this.signupForm.value)
 
