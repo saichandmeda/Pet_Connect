@@ -1,0 +1,39 @@
+<!-- <p>home2 works!</p> -->
+<div id="o" class="outer" [ngStyle]="{backgroundImage:'url(./assets/back.jpeg)'}">
+<nav class="nav fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-3">
+                <div class="logo-container">
+                    <a href="home">
+                        <img src="assets/logo.png" alt="" class="logo" >
+                    </a>
+                </div>
+                <a id="p" href="home"><p id="p" class="p">Pet Connect</p></a>
+            </div>
+            <div id="h" class="col-md-20 col-sm-9 col-9 text-end">
+                <!-- <div class="menu-icon">
+                    <i class="bi bi-list"></i>
+                </div> -->
+                <div class="desktop_menu">
+                    <ul>
+                        <li><a id="l" href="home">Home</a></li>
+                        <li><a id="l" href="">About</a></li>
+                        <li><a id="l" href="">Contact</a></li>
+                        <li><a id="l" (click)="logOut()">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="flex min-h-screen justify-center">
+    <div class="cardWrapper flex flex-wrap p-10 justify-center items-center">
+        <div class="cardBlock block w-[250px] h-[200px]"  *ngFor="let config of cardConfig">
+            <app-card-component (click)="navigateToRoute(config.route)"  [config]="config"></app-card-component>
+        </div>
+       
+        <!-- <app-home2 routerLink="{{config.route}}" class="w-[250px] h-[200px]" *ngFor="let config of cardConfig" [config]="config"></app-home2> -->       
+    </div>
+</div>
+</div>

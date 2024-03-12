@@ -1,8 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import ValidateForm from '../../helpers/validateform';
+import { AuthService } from '../../services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup'
+import { NgToastModule } from 'ng-angular-popup'
 
 // import { AppComponent }  from './app.component';
 // import { BrowserModule } from '@angular/platform-browser';
@@ -12,7 +17,8 @@ import ValidateForm from '../../helpers/validateform';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule,RouterOutlet, ReactiveFormsModule ],
+  imports: [CommonModule,RouterOutlet, RouterModule, ReactiveFormsModule, HttpClientModule ],
+  providers: [ AuthService ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -23,7 +29,7 @@ export class LoginComponent {
   isText: boolean = false;
   eyeIcon: string = "fa-eye-slash";
   loginForm!: FormGroup;
-  constructor(private fb: FormBuilder ) { }
+  constructor(private fb: FormBuilder, private auth: AuthService, private router:Router, private toast: NgToastService ) { }
 
   ngOnInit(): void{
     this.loginForm = this.fb.group({
@@ -38,10 +44,24 @@ export class LoginComponent {
     this.isText ? this.type="Text" : this.type = "password";
   }
 
-  onSubmit(){
+  onLogin(){
     if(this.loginForm.valid){
       
       console.log(this.loginForm.value)
+      this.auth.login(this.loginForm.value)
+      .subscribe({
+        next:(res)=>{
+          // alert(res.message)
+          this.auth.storeToken(res.token);
+          this.toast.success({detail:"SUCCESS", summary:res.message, duration:5000});
+          this.loginForm.reset();
+          this.router.navigate(['home2']);
+        },
+        error:(err)=>{
+          // alert(err?.error.message)
+          this.toast.error({detail:"ERROR", summary:"Something went wrong!", duration:5000});
+        }
+      })
 
     }else{
 

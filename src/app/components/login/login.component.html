@@ -1,4 +1,32 @@
-<div class="outer ">
+
+<div class="outer "   [ngStyle]="{backgroundImage:'url(./assets/back.jpeg)'}">
+    <nav class="nav fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-3">
+                    <div class="logo-container">
+                        <a href="home">
+                            <img src="assets/logo.png" alt="" class="logo" >
+                        </a>
+                    </div>
+                    <a id="p" href="home"><p id="p" class="p">Pet Connect</p></a>
+                </div>
+                <div id="h" class="col-md-20 col-sm-9 col-9 text-end">
+                    <!-- <div class="menu-icon">
+                        <i class="bi bi-list"></i>
+                    </div> -->
+                    <div class="desktop_menu">
+                        <ul>
+                            <li><a id="l" href="home">Home</a></li>
+                            <li><a id="l" href="">About</a></li>
+                            <li><a id="l" href="">Contact</a></li>
+                            <li><a id="l" href="login">Sign In</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div class="container ">
         <div id="r" class="row ">
             <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3 ">
@@ -32,20 +60,36 @@
                                 <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Password is required</small>
                                 <!-- <small *ngIf="loginForm.controls['Password'].dirty && loginForm.hasError('required,Password')" class="text.danger">*Password is required</small> -->
                                 <div id="fi" class="form-inline" fr mt-4>
-                                   <a id="forget" class="font-weight-bold" href="forget">Forgot Password?</a> 
+                                   <a id="forget" class="font-weight-bold" href="forget" style="color: blue;">Forgot Password?</a> 
                                 </div>
-                                <button (click)="onSubmit()"  type="submit" class="btn btn-primary" style="width: 300px; height: 40px;">Login</button>
+                                <button (click)="onLogin()"  type="submit"  mat-button color="primary" class="btn btn-primary" style="width: 300px; height: 40px; color: black;">Login</button>
                                 <!-- [disabled]="loginForm.invalid" -->
-                                <div id="d" class="text-center  pt-4 text-muted">Don't have account? <a id="f" href="signup">Sign Up</a></div>
+                                <div id="d" class="text-center  pt-4 text-muted">Don't have account? <a id="f" href="signup" style="color: blue;">Sign Up</a></div>
                                 <!-- <div class="text-center pt-4 text-muted">Don't have account? <a id="forget" routerLink="/signup">Sign Up</a></div> -->
                             </div>
                         </form>
                     </div>
-                    <div class="mx-3 my-2 py-2 border bg-white">
+                    <div class="mx-3 my-2 py-2 border  bg-white">
                         <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.com%2F%3Fptid%3D19027681%26ptt%3D8%26fpts%3D0&ec=futura_hpp_co_si_001_p&ifkv=ASKXGp234KSGSoCw5zaUMoLqFUTqsv55rPP6N_9E89qotK7fgbpluhwG7nxrVSyLrIuWslDdcVozIg&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S2064615290%3A1707472133784078&theme=glif" target="_blank">
-                            <button style="width: 200px; height: 45px;" type="button" class="google-sign-in-button" >
+                            <button class="gsi-material-button" style="margin-left: 85px;">
+                                <div class="gsi-material-button-state"></div>
+                                <div class="gsi-material-button-content-wrapper">
+                                  <div class="gsi-material-button-icon">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block;">
+                                      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+                                      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+                                      <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+                                      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+                                      <path fill="none" d="M0 0h48v48H0z"></path>
+                                    </svg>
+                                  </div>
+                                  <span class="gsi-material-button-contents">Sign in with Google</span>
+                                  <span style="display: none;">Sign in with Google</span>
+                                </div>
+                              </button>
+                            <!-- <button style="width: 200px; height: 45px;" type="button" class="google-sign-in-button" >
                                 Sign up with Google
-                            </button>
+                            </button> -->
                         </a>
                         
                           

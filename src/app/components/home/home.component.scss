@@ -1,0 +1,105 @@
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  /* Add some content at the bottom of the video/page */
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Style the button used to pause/play the video */
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
+// #o{
+//     padding: 0%;
+//     height: 824px;
+//     // bckground-image: url('pathToImage');
+//     background-size: cover;
+//     background-position: center center;
+//     background-size: 100% auto;
+// }
+
+// nav{
+//     // padding: 10px;
+//     // background: #02534d;
+//     background: rgb(78, 75, 75);
+//     height: 100px;
+//     // margin: 20px;
+//     border-radius: 16px;
+//     margin-top: 1%;
+//     margin-left: 1%;
+//     margin-right: 1%;
+// }
+
+// .logo{
+//     width: 70px;
+// }
+
+// .p{
+//     color: orange;
+//     margin-left: -12%;
+// }
+
+// .logo-container{
+//     margin-top: 20px;
+//     margin-left: -10%;
+//     // height: 400px;
+// }
+
+// .row{
+//     margin-right: -5%;
+// }
+
+// .logo:hover{
+//     cursor: pointer;
+// }
+
+// .desktop_menu{
+//     margin-top:24px;
+// }
+
+// .desktop_menu ul{
+//     padding: 0px;
+//     margin: 0px;
+// }
+
+// .desktop_menu ul li{
+//     list-style-type: none;
+//     color: orange;
+//     display:inline-block;
+//     font-size: 18px;
+//     margin-left: 26px;
+// }
+
+// .desktop_menu ul li:hover {
+//     font-size: 19px;
+//     font-weight: bold;
+//     cursor: pointer;
+//     color: rgb(246, 101, 48);
+//     transition: 0.3s ease-in-out;
+// }
+
+// #f{
+//     color:orange;
+// }
