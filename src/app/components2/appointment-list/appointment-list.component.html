@@ -1,0 +1,37 @@
+<!-- <p>appointment-list works!</p> -->
+
+
+<table mat-table  [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+      
+    <!-- Position Column -->
+
+    <ng-container matColumnDef="petClinic">
+      <th mat-header-cell *matHeaderCellDef> Pet Clinic </th>
+      <td mat-cell *matCellDef="let element"> {{element.petClinic}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="appointmentDate">
+      <th mat-header-cell *matHeaderCellDef>Appointment Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.appointmentDate}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="appointmentTime">
+      <th mat-header-cell *matHeaderCellDef> Appointment Time </th>
+      <td mat-cell *matCellDef="let element"> {{element.appointmentTime}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the search "{{input.value}}"</td>
+    </tr> -->
+
+  </table>

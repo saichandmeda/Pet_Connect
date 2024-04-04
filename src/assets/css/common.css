@@ -335,12 +335,14 @@ img{
 nav{
     /* padding: 10px; */
     /* background: #02534d; */
-    /* background: rgb(78, 75, 75); */
+    /* background: rgb(187, 104, 21); */
+    /* background: rgb(142, 145, 150); */
+    background: rgb(175, 178, 183);
 
-    height: 100px;
+    height: 84px;
     /* margin: 20px; */
     border-radius: 16px;
-    margin-top: 1%;
+    margin-top: 0.3%;
     margin-left: 1%;
     margin-right: 1%;
 }
@@ -352,6 +354,7 @@ nav{
 .p{
     color: rgb(51, 50, 48);
     margin-left: -15%;
+    margin-top: -3px;
 }
 
 .logo-container{

@@ -1,0 +1,69 @@
+<!-- <p>grid-dialog works!</p>
+<h1 mat-dialog-title>Welcome user</h1> 
+<div mat-dialog-content> 
+  <p>What's your favorite animal?</p> 
+</div> 
+<div mat-dialog-actions> 
+  <button mat-button>No Thanks</button> 
+</div>  -->
+
+<!-- <mat-form-field appearance="standard"›
+<mat-label› Filter Table ‹/mat-label›
+<input matInput placeholder=""search />
+</mat-form-field> -->
+
+<!-- <mat-form-field appearance="standard"> -->
+<!-- <mat-form-field> -->
+  <!-- <mat-label>Filter Table</mat-label>   -->
+<!-- <div id="o" class="outer" style="background-size: cover></div> -->
+<div class="outer" style="margin-top: 25px;">
+  <i class="fa fa-search fa-lg me-3 fa-fw"></i>
+  <input matInput placeholder="Search" (keyup)="applyFilter($event)" #input style="margin-bottom: 25px;"/>
+<!-- </mat-form-field> -->
+
+<table mat-table [dataSource]="dataSource"  class="mat-elevation-z8" matSort>
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+      
+    <!-- Position Column -->
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="hospital_Name">
+      <th mat-header-cell *matHeaderCellDef>Hospital Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.hospital_Name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> City </th>
+      <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="province">
+      <th mat-header-cell *matHeaderCellDef> Province </th>
+      <td mat-cell *matCellDef="let element"> {{element.province}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row (click)="onSelect(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the search "{{input.value}}"</td>
+    </tr>
+
+  </table>
+</div>
+
+  <!-- <input  (keyup)="applyFilter($event.target.value)"placeholder="Search"> -->

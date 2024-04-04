@@ -44,6 +44,18 @@ export class LoginComponent {
     this.isText ? this.type="Text" : this.type = "password";
   }
 
+  home(){
+    const localData = localStorage.getItem('token');
+    if (localData != null) {
+      this.router.navigateByUrl('/home2')
+      return true;
+    } else {
+      this.router.navigateByUrl('/home')
+      // alert("Please Login First")
+      return false;
+    }
+  }
+
   onLogin(){
     if(this.loginForm.valid){
       

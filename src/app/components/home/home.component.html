@@ -3,21 +3,22 @@
 
 <!-- <div [style.background-image]="'url(/assets/' + back.jpeg + ')'"></div> -->
 <!-- <div [style.background-image]="back.jpeg"></div> -->
-<div id="o" class="outer" [ngStyle]="{backgroundImage:'url(./assets/back.jpeg)'}" >
-    <video autoplay muted loop id="myVideo">
+<div id="o" class="outer"  [ngStyle]="{backgroundImage:'url(./assets/back.jpeg)'}">
+    
+    <!-- <video autoplay muted loop id="myVideo">
         <source src="assets/back.mp4" type="video/mp4">
-        <!-- Your browser does not support HTML5 video. -->
-    </video>
+        
+    </video> -->
 <nav class="nav fixed-top">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-3">
                 <div class="logo-container">
-                    <a href="home">
+                    <a (click)="home()">
                         <img src="assets/logo.png" alt="" class="logo" >
                     </a>
                 </div>
-                <a id="p" href="home"><p id="p" class="p">Pet Connect</p></a>
+                <a id="p" (click)="home()"><p id="p" class="p">Pet Connect</p></a>
             </div>
             <div id="h" class="col-md-20 col-sm-9 col-9 text-end">
                 <!-- <div class="menu-icon">
@@ -25,7 +26,7 @@
                 </div> -->
                 <div class="desktop_menu">
                     <ul>
-                        <li><a id="l" href="home">Home</a></li>
+                        <li><a id="l" (click)="home()">Home</a></li>
                         <li><a id="l" href="">About</a></li>
                         <li><a id="l" href="">Contact</a></li>
                         <li><a id="l" href="login">Sign In</a></li>

@@ -26,24 +26,27 @@ export class Home2Component {
     public cardConfig:any = [
       {
         icon : "PetShop.jpg",
+        route: "home4"
         // name : "Pet Shop",
         // route: "../createauction"
+        // route: "../../components2/home3/home3.component"
       },
       {
         icon : "PetCare.jpg",
         // name: "Pet Health",
-        // route: "../createauction"
-      },
-      {
-        icon: "PetForum.jpg",
-        // name: "Pet Adoption",
-        // route: "../createauction"
+        route: "home3"
       },
       {
         icon : "PetAdopt.jpg",
         // name: "Pet Forum",
         // route: "../settings"
+      },
+      {
+        icon: "PetForum.jpg",
+        // name: "Pet Adoption",
+        // route: "../createauction"
       }
+     
     ];
 
 
@@ -53,13 +56,25 @@ export class Home2Component {
     }
 
     logOut(){
-      debugger
+     
       this.auth.signOut();
-      debugger
+      
+    }
+
+    home(){
+      const localData = localStorage.getItem('token');
+      if (localData != null) {
+        this.router.navigateByUrl('/home2')
+        return true;
+      } else {
+        this.router.navigateByUrl('/home')
+        // alert("Please Login First")
+        return false;
+      }
     }
 
     navigateToRoute(route: string) {
-      // this.router.navigate([route]);
+      this.router.navigate([route]);
     }
 
     onItemClicked(route: string) {

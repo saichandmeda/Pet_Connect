@@ -1,0 +1,94 @@
+<!-- <p>home4 works!</p> -->
+    <!-- <div class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
+                
+            </i>
+            <strong style="font-size: 30px;">Flipkart</strong>
+            <div class="form-group">
+                <input type="text" class="form-control"  placeholder="search products">
+            </div>
+            <span class="fas fa-search search-icon"></span>
+
+
+        </div>
+        <button routerLink="cart" class="btn btn-primary">
+            <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+            <div style="font-size: 10px;" class="badge bg-danger"></div>
+        </button>
+    </div> -->
+
+    <header>
+        <nav class="nav fixed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-3">
+                        <div class="logo-container">
+                            <a (click)="home()">
+                                <img src="assets/logo.png" alt="" class="logo" >
+                            </a>
+                        </div> 
+                        <a id="p" (click)="home()"><p id="p" class="p">Pet Connect</p></a>
+                    </div>
+                    <div id="h" class="col-md-20 col-sm-9 col-9 text-end">
+                        <!-- <div class="menu-icon">
+                            <i class="bi bi-list"></i>
+                        </div> -->
+                        <div class="desktop_menu">
+                            <ul>
+                                <li><div class="form-group" >
+                                    <input type="text" class="form-control"  placeholder="search products" style="width:auto;">
+                                </div>
+                                </li>
+                                <span class="fas fa-search search-icon" style="color: black;"></span>
+                                <li><button routerLink="cart" style="color:black;">
+                                    <!-- style="color: #e98f66; -->
+                                    <i style="font-size: 30px;" class="fas fa-cart-plus"  ></i>
+                                    <div style="font-size: 10px;" class="badge bg-danger"></div>
+                                </button></li>
+                                &nbsp;
+                                <li><a id="l" (click)="home()">Home</a></li>
+                                <!-- <li><a id="l" (click)="openDialog2">My Appointments</a></li>
+                                <li><a id="l" href="https://maps.google.com" target="_blank">Explore Hospitals</a></li> -->
+                                <li><a id="l" (click)="logOut()">Sign Out</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<div class="outer" [ngStyle]="{backgroundImage:'url(./assets/back.jpeg)'}">
+    <div class="card-top container-fluid" >
+        <div class="container d-flex">
+            <div class="item" style="margin-top: 130px; margin-left: -30px;">
+                <a>
+                    <img src="./assets/Images/All Products.jpg" style="margin-left: -12px;width:125px;">
+                    <h6>All products</h6>
+                </a>
+            </div>
+            <div class="item" style="margin-top: 130px; margin-left: 60px;">
+                <a >
+                    <img src="./assets/Images/Pet Food.jpg" style="margin-left: -25px; width:140px; height: 75px;">
+                    <h6>Pet Food</h6>
+                </a>
+            </div>
+            <div class="item" style="margin-top: 130px; margin-left: 30px;">
+                <a >
+                    <img src="./assets/Images/Pet Fashion.jpg" style="margin-left: -10px; width:130px; height: 75px;">
+                    <h6 style="margin-left: 10px;">Pet Fashion</h6>
+                </a>
+            </div>
+            <div class="item" style="margin-top: 130px; margin-left: 35px;">
+                <a >
+                    <img src="./assets/Images/Pet Accessories.jpg" style="margin-left: -3px; width:120px; height: 75px;">
+                    <h6>Pet Accessories</h6>
+                </a>
+            </div>
+        </div>
+    </div>
+    &nbsp;
+    <hr>
+</div>

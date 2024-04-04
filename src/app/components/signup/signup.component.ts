@@ -7,6 +7,7 @@ import ValidateForm from '../../helpers/validateform';
 import { AuthService } from '../../services/auth.service';
 import { HttpClientModule } from '@angular/common/http'; 
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-signup',
@@ -23,7 +24,7 @@ export class SignupComponent {
   isText: boolean = false;
   eyeIcon: string = "fa-eye-slash";
   signUpForm!: FormGroup;
-  constructor(private fb: FormBuilder, private auth: AuthService, private router:Router ) { }
+  constructor(private fb: FormBuilder, private auth: AuthService, private router:Router,private toast: NgToastService ) { }
 
   ngOnInit(): void{
     this.signUpForm = this.fb.group({
@@ -42,20 +43,34 @@ export class SignupComponent {
     this.isText ? this.type="Text" : this.type = "password";
   }
 
+  home(){
+    const localData = localStorage.getItem('token');
+    if (localData != null) {
+      this.router.navigateByUrl('/home2')
+      return true;
+    } else {
+      this.router.navigateByUrl('/home')
+      // alert("Please Login First")
+      return false;
+    }
+  }
+
 
   onSignUp(){
     if(this.signUpForm.valid){
       
       
       this.auth.signUp(this.signUpForm.value)
+
       .subscribe({
         next:(res)=>{
-          alert(res.message)
+          // alert(res.message)
+          this.toast.success({detail:"SUCCESS", summary:res.message, duration:5000});
           this.signUpForm.reset();
           this.router.navigate(['login']);
         },
         error:(err)=>{
-          alert(err?.error.message)
+          alert(err?.error.message)  
         }
       })
 
