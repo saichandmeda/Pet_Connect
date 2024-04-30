@@ -18,7 +18,7 @@ import { AdoptService } from '../../services/adopt.service';
 })
 export class Home5Component {
 
-  public productList : any 
+  // public productList : any 
   public filterCategory : any
   searchKey:string ="";
 
@@ -119,12 +119,17 @@ export class Home5Component {
     }
   }
 
-  filter(category:string){
-    this.filterCategory = this.productList
-    .filter((a:any)=>{
-      if(a.category == category || category==''){
-        return a;
-      }
-    })
+  centerClicked(centerName: string){
+    // this.router.navigateByUrl('/pets/' + centerName);
+    this.router.navigate(['pets',centerName])
   }
+
+  // filter(category:string){
+  //   this.filterCategory = this.productList
+  //   .filter((a:any)=>{
+  //     if(a.category == category || category==''){
+  //       return a;
+  //     }
+  //   })
+  // }
 }

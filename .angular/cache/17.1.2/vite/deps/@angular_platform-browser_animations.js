@@ -31,8 +31,8 @@ import {
   ɵɵdefineNgModule,
   ɵɵinject
 } from "./chunk-SKS6UP27.js";
-import "./chunk-UKEHM6V6.js";
 import "./chunk-V2DXGMIT.js";
+import "./chunk-UKEHM6V6.js";
 import {
   __objRest,
   __spreadValues

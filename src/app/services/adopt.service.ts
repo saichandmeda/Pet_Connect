@@ -16,4 +16,9 @@ getCenter(){
     return res;
   }));
 }
+
+getPetsFromCenter (centerName: string) {
+  let url = `https://localhost:7196/Center/petList/${centerName}`;
+  return this.http.get(url);
+}
 }

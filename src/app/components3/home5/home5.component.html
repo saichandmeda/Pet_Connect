@@ -22,6 +22,7 @@
                         <span class="fas fa-search search-icon" style="color: black;"></span>
                         &nbsp;
                         <li><a id="l" (click)="home()">Home</a></li>
+                        <li><a id="l" href="https://maps.google.com" target="_blank">Explore Animal Centers</a></li>
                         <!-- <li><a id="l" (click)="openDialog2">My Appointments</a></li>
                         <li><a id="l" href="https://maps.google.com" target="_blank">Explore Hospitals</a></li> -->
                         <li><a id="l" (click)="logOut()">Sign Out</a></li>
@@ -45,7 +46,7 @@
                 <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">Email: {{item.email}}</h5>
                 <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p> -->
                 <!-- <p><strong>Price:</strong> ${{item.price}}</p> -->
-                <button  class="btn btn-primary" >Go</button>
+                <button  class="btn btn-primary" (click)="centerClicked(item.title)">Go</button>
             </div>
         </ng-container>
 

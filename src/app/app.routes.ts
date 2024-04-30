@@ -18,6 +18,7 @@ import { CartComponent } from './components2/cart/cart.component';
 import { PostDetailsComponent } from './components3/post-details/post-details.component';
 import { ForumUsersComponent } from './components3/forum-users/forum-users.component';
 import { Home5Component } from './components3/home5/home5.component';
+import { PetsComponent } from './components3/pets/pets.component';
 
 
 // import { NgModule } from '@angular/core';
@@ -41,39 +42,43 @@ import { Home5Component } from './components3/home5/home5.component';
 // })
 
 export const routes: Routes = [
-    {path: '', redirectTo: 'home', pathMatch: 'full'},
-    // {path: '', redirectTo: 'home3', pathMatch: 'full'},
-    {path:'home2', component: Home2Component,canActivate:[authGuard]},
-    {path:'home', component: HomeComponent},
-    {path:'card', component: CardComponent},
-    {path:'login', component: LoginComponent},
-    {path:'signup', component: SignupComponent},
-    {path:'forget', component: ForgetComponent},
-    // {path:'comments', component: CommentsComponent},
-    {path:'dashboard', component: GridDialogComponent,canActivate:[authGuard]},
-    {path:'home3', component: Home3Component,canActivate:[authGuard]},
-    {path:'home4', component: Home4Component,canActivate:[authGuard]},
-    {path:'home5', component: Home5Component,canActivate:[authGuard]},
-    {path:'cart', component: CartComponent,canActivate:[authGuard]},
-    {path:'appointment-list', component: AppointmentListComponent,canActivate:[authGuard]},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // {path: '', redirectTo: 'home3', pathMatch: 'full'},
+  { path: 'home2', component: Home2Component, canActivate: [authGuard] },
+  { path: 'home', component: HomeComponent },
+  { path: 'card', component: CardComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'forget', component: ForgetComponent },
+  // {path:'comments', component: CommentsComponent},
+  { path: 'dashboard', component: GridDialogComponent, canActivate: [authGuard] },
+  { path: 'home3', component: Home3Component, canActivate: [authGuard] },
+  { path: 'home4', component: Home4Component, canActivate: [authGuard] },
+  { path: 'home5', component: Home5Component, canActivate: [authGuard] },
+  { path: 'cart', component: CartComponent, canActivate: [authGuard] },
+  { path: 'appointment-list', component: AppointmentListComponent, canActivate: [authGuard] },
+  {
+    path: 'pets/:centerName',
+    component: PetsComponent,
+    canActivate: [authGuard]
+  },
+  {
+    path: 'postdetails',
+    component: PostDetailsComponent,
+    canActivate: [authGuard]
+  },
+  {
+    path: 'postdetails/:userId/:postId',
+    component: PostDetailsComponent,
+    canActivate: [authGuard]
+  },
 
-    {
-        path:'postdetails',
-        component:PostDetailsComponent,
-        canActivate:[authGuard]
-      },
-      {
-        path:'postdetails/:userId/:postId',
-        component:PostDetailsComponent,
-        canActivate:[authGuard]
-      },
+  {
+    path: 'post',
+    component: ForumUsersComponent,
+    canActivate: [authGuard]
+  },
 
-      {
-        path:'post',
-        component:ForumUsersComponent,
-        canActivate:[authGuard]
-      },
-    
 
 
 ];

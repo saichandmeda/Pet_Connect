@@ -1,10 +1,4 @@
 import {
-  ScrollDispatcher,
-  ScrollingModule,
-  ViewportRuler
-} from "./chunk-LFRZDCSZ.js";
-import "./chunk-GIE2FNTA.js";
-import {
   animate,
   animateChild,
   group,
@@ -14,6 +8,12 @@ import {
   transition,
   trigger
 } from "./chunk-HYSO3G4V.js";
+import {
+  ScrollDispatcher,
+  ScrollingModule,
+  ViewportRuler
+} from "./chunk-47EPYWQX.js";
+import "./chunk-GIE2FNTA.js";
 import {
   A11yModule,
   BidiModule,
@@ -32,7 +32,7 @@ import {
   coerceNumberProperty,
   hasModifierKey,
   supportsScrollBehavior
-} from "./chunk-KFXUUSCS.js";
+} from "./chunk-VEFZSMT2.js";
 import {
   DOCUMENT,
   Location
@@ -89,11 +89,11 @@ import {
   ɵɵtemplate,
   ɵɵviewQuery
 } from "./chunk-SKS6UP27.js";
-import "./chunk-UKEHM6V6.js";
 import {
   defer,
   merge
 } from "./chunk-V2DXGMIT.js";
+import "./chunk-UKEHM6V6.js";
 import {
   Subject,
   Subscription,

@@ -3,8 +3,6 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dial
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {MatFormFieldDefaultOptions, MatFormFieldModule} from '@angular/material/form-field';
 import { AuthService } from '../../services/auth.service';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
