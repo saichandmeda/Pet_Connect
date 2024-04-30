@@ -1,0 +1,144 @@
+<nav class="nav fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-3">
+                <div class="logo-container">
+                    <a (click)="home()">
+                        <img src="assets/logo.png" alt="" class="logo" >
+                    </a>
+                </div>
+                <a id="p" (click)="home()"><p id="p" class="p">Pet Connect</p></a>
+            </div>
+            <div id="h" class="col-md-20 col-sm-9 col-9 text-end">
+                <!-- <div class="menu-icon">
+                    <i class="bi bi-list"></i>
+                </div> -->
+                <div class="desktop_menu">
+                    <ul>
+                        <li><a id="l" (click)="home">Home</a></li>
+                        <li><a id="l" href="">About</a></li>
+                        <li><a id="l" href="">Contact</a></li>
+                        <li><a id="l" (click)="logOut()">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+      
+        
+           
+            <div class="col-sm-12" style="margin-top: 100px;">
+                <div class="card card-block card-stretch card-height my-4">
+                    <div class="card-body">
+                        <div class="user-post-data">
+                            <div class="d-flex justify-content-between">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="">
+                                            <h4 class=" d-inline-block"><i class="fas fa-solid fa-angles-right me-3 text-dark"></i>{{postObj.postTitle}}</h4>
+                                            <p class="text-muted">User Name</p>
+                                            <!-- <p class="text-muted">{{storedUserData.userName}}</p> -->
+                                            <p class="mb-0 text-primary">{{postObj.createdDate | date:'MMM d, y, h:mm:ss a'}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <p>{{postObj.postDescription}}</p>
+                        </div>
+                        <div class="comment-area mt-3 d-flex ">
+                            <div class="total-like-block ms-2 me-3">
+                                <span>
+                                    <i *ngIf="postObj.liked == 0 " (click)="likePost(postObj)"
+                                     class="fas fa-regular fa-thumbs-up p-2" 
+                                     [ngStyle]="{'color': postObj.liked == 1? '#4d9dda':''}"
+                                    ></i>
+                                    <i *ngIf="postObj.liked == 1" (click)="dislikePost(postObj)"
+                                     class="fas fa-solid fa-thumbs-up p-2" 
+                                    [ngStyle]="{'color': postObj.liked == 1? '#4d9dda':''}"
+                                    ></i>
+                                    
+                                    Likes({{postObj.totalLikes}})
+                                </span>
+                            </div>
+                        </div>
+                        
+                      
+                    </div>
+
+                <hr>
+                <!-- comments -->
+                
+                <ng-container *ngIf="allComment.length > 0"> 
+                    <h5 class="m-4"><i class="fas fa-solid fa-comment mx-2"></i>Comments</h5>
+                    <ul class="post-comments list-inline p-0 mx-3" *ngFor="let comment of allComment ">
+                        <li class="mb-2">
+                            <div class="d-flex">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="comment-data-block ms-3">
+                                            <h6><i class="fas fa-solid fa-user m-2"></i>{{comment.userName}}</h6>
+                                            <p class="">{{comment.comment}}</p>
+                                            <div class="d-flex flex-wrap align-items-center comment-activity">
+                                                
+                                                <i class="fas fa-solid fa-reply p-1" style="color: #4d9dda;"></i>
+                                                <!-- <a  class="pe-3" (click)="showReply(comment)">reply</a> -->
+                                                <!-- <div class="d-flex" *ngIf="comment.isEdit" >
+                                                  <input type="text"  class="form-control my-2 mx-3" placeholder="Enter Your Comment" [(ngModel)]="commentObj.comment">
+                                                  <button type="button" class="btn btn-sm btn-primary me-2 " (click)="reply(comment.commentId)"><i class="fa-solid fa-comment-medical"></i></button>
+                                                    </div>                                    
+                                                  <div *ngIf="storedUserData.userId === comment.commentUserId                                        ">
+                                                    <i class="fa-solid fa-trash p-1 text-danger pe-3"  (click)="onCommentDelete(comment.commentId)"></i>
+                                                 
+                                                    <i class="fa-regular fa-pen-to-square p-1 text-info pe-3"  (click)="onCommentEdit(comment)"></i>
+                                                </div> -->
+                                                
+                                                <span>{{comment.commentDate | date:'h:mm a'}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </li>
+                       
+                    </ul>
+                    
+                </ng-container>
+                <ng-container *ngIf="allComment.length === 0">
+                    <ul>
+                        <li>No Comment on this post</li>
+                    </ul>
+                </ng-container>
+               
+
+                <div class="mx-3 my-3">
+                   <div class="d-flex">
+                    <input type="text" class="form-control" placeholder="Enter Your Comment" [(ngModel)]="commentObj.comment">
+                    <button type="button" *ngIf="commentObj.commentId === 0" class="btn btn-primary btn-sm p-2" (click)="newComment()"> Comment</button>
+                    <button type="button" *ngIf="commentObj.commentId !== 0" class="btn btn-primary btn-sm p-2" (click)="updateComment()">Update </button>
+
+                   </div>
+                </div>
+               
+            </div>
+                
+            </div>
+
+      
+    </div>
+</div>
+

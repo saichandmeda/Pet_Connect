@@ -29,6 +29,7 @@ export class LoginComponent {
   isText: boolean = false;
   eyeIcon: string = "fa-eye-slash";
   loginForm!: FormGroup;
+
   constructor(private fb: FormBuilder, private auth: AuthService, private router:Router, private toast: NgToastService ) { }
 
   ngOnInit(): void{
@@ -65,6 +66,8 @@ export class LoginComponent {
         next:(res)=>{
           // alert(res.message)
           this.auth.storeToken(res.token);
+          this.auth.storeUserId(res.id);
+          this.auth.storeUserName(this.loginForm.value.userName)
           this.toast.success({detail:"SUCCESS", summary:res.message, duration:5000});
           this.loginForm.reset();
           this.router.navigate(['home2']);

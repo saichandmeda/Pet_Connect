@@ -1,0 +1,42 @@
+<!-- <p>header works!</p> -->
+<header>
+    <nav class="nav fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-3">
+                    <div class="logo-container">
+                        <a (click)="home()">
+                            <img src="assets/logo.png" alt="" class="logo" >
+                        </a>
+                    </div> 
+                    <a id="p" (click)="home()"><p id="p" class="p">Pet Connect</p></a>
+                </div>
+                <div id="h" class="col-md-20 col-sm-9 col-9 text-end">
+                    <!-- <div class="menu-icon">
+                        <i class="bi bi-list"></i>
+                    </div> -->
+                    <div class="desktop_menu">
+                        <ul>
+                            <li><div class="form-group" >
+                                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products" style="width:auto;">
+                            </div>
+                            </li>
+                            <span class="fas fa-search search-icon" style="color: black;"></span>
+                            <li><button (click)="cart()" style="color:black;">
+                                <!-- style="color: #e98f66; -->
+                                <i style="font-size: 30px;" class="fas fa-cart-plus"  ></i>
+                                <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+                            </button></li>
+                            &nbsp;
+                            <li><a id="l" (click)="home()">Home</a></li>
+                            <!-- <li><a id="l" (click)="openDialog2">My Appointments</a></li>
+                            <li><a id="l" href="https://maps.google.com" target="_blank">Explore Hospitals</a></li> -->
+                            <li><a id="l" (click)="logOut()">Sign Out</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

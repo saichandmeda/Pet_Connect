@@ -14,6 +14,10 @@ import { Home3Component } from './components2/home3/home3.component';
 import { AppointmentListComponent } from './components2/appointment-list/appointment-list.component';
 import { GridDialogComponent } from './components2/grid-dialog/grid-dialog.component';
 import { Home4Component } from './components2/home4/home4.component';
+import { CartComponent } from './components2/cart/cart.component';
+import { PostDetailsComponent } from './components3/post-details/post-details.component';
+import { ForumUsersComponent } from './components3/forum-users/forum-users.component';
+import { Home5Component } from './components3/home5/home5.component';
 
 
 // import { NgModule } from '@angular/core';
@@ -46,10 +50,29 @@ export const routes: Routes = [
     {path:'signup', component: SignupComponent},
     {path:'forget', component: ForgetComponent},
     // {path:'comments', component: CommentsComponent},
-    {path:'dashboard', component: GridDialogComponent},
+    {path:'dashboard', component: GridDialogComponent,canActivate:[authGuard]},
     {path:'home3', component: Home3Component,canActivate:[authGuard]},
     {path:'home4', component: Home4Component,canActivate:[authGuard]},
-    {path:'appointment-list', component: AppointmentListComponent},
+    {path:'home5', component: Home5Component,canActivate:[authGuard]},
+    {path:'cart', component: CartComponent,canActivate:[authGuard]},
+    {path:'appointment-list', component: AppointmentListComponent,canActivate:[authGuard]},
+
+    {
+        path:'postdetails',
+        component:PostDetailsComponent,
+        canActivate:[authGuard]
+      },
+      {
+        path:'postdetails/:userId/:postId',
+        component:PostDetailsComponent,
+        canActivate:[authGuard]
+      },
+
+      {
+        path:'post',
+        component:ForumUsersComponent,
+        canActivate:[authGuard]
+      },
     
 
 

@@ -38,11 +38,13 @@ export class Home2Component {
       },
       {
         icon : "PetAdopt.jpg",
+        route: "home5"
         // name: "Pet Forum",
         // route: "../settings"
       },
       {
         icon: "PetForum.jpg",
+        route: "post"
         // name: "Pet Adoption",
         // route: "../createauction"
       }

@@ -1,0 +1,48 @@
+.form-control {
+    border-radius: 3px;
+    width: 600px;
+    margin-left: 20px;
+}
+
+
+
+.item A:hover{
+    color:blue;
+    cursor: pointer;
+}
+
+.card {
+    padding: 20px;
+    margin: 50px;
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    transition: 0.3s ease-in-out;
+    border-radius: 0%;
+}
+
+.card img:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+    // border-radius: 0%;
+}
+
+.image-container img { 
+    display: block; 
+    max-width: 100%; 
+    height: auto; 
+    // border-radius: 0%;
+} 
+
+.search-icon {
+    position: absolute;
+    z-index: 10;
+    right: 59%;
+    top: 20px;
+    color: blue;
+    margin-top: 15px;
+    margin-right:-630px;;
+}

@@ -31,8 +31,20 @@ export class AuthService {
     localStorage.setItem('token',tokenValue)
   }
 
+  storeUserId(idValue: string){
+    localStorage.setItem('id',idValue)
+  }
+
+  storeUserName(nameValue: string){
+    localStorage.setItem('userName',nameValue)
+  }
+
   getToken(){
     return localStorage.getItem('token')
+  }
+
+  getUser(){
+    return localStorage.getItem('userName')
   }
 
   isLoggedIn(): boolean{

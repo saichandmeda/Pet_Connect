@@ -7,19 +7,62 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartService } from '../../services/cart.service';
+import { FilterPipe } from "../../shared/filter.pipe";
 
 @Component({
-  selector: 'app-home4',
-  standalone: true,
-  // imports: [CommonModule,MatRadioModule,FormsModule,ReactiveFormsModule, RouterOutlet,RouterModule,HttpClientModule],
-  imports:[CommonModule],
-  providers:[AuthService],
-  templateUrl: './home4.component.html',
-  styleUrl: './home4.component.scss'
+    selector: 'app-home4',
+    standalone: true,
+    providers: [AuthService, PetShopService],
+    templateUrl: './home4.component.html',
+    styleUrl: './home4.component.scss',
+    imports: [CommonModule, FilterPipe]
 })
 export class Home4Component {
 
-  constructor(private router:Router,private auth: AuthService,private auth2: PetShopService ,private toast: NgToastService) {}
+  public productList : any 
+  public filterCategory : any
+  searchKey:string ="";
+
+  constructor(private router:Router,private auth : AuthService, private auth2: PetShopService ,private auth3: CartService, private toast: NgToastService) {}
+  
+
+  ngOnInit(): void {
+
+    // this.auth3.getProducts()
+    // .subscribe(res=>{
+    //   this.totalItem = res.length;
+    // });
+
+    this.auth2.getProduct()
+    .subscribe(res=>{
+      this.productList = res;
+
+
+      this.filterCategory = res;
+      this.productList.forEach((a:any) => {
+        if(a.category =="Pet Food" || a.category =="Pet Fashion"){
+          a.category =="Pet Accessories"
+        }
+        Object.assign(a,{quantity:1,total:a.price});
+      });
+      console.log(this.productList)
+
+    });
+
+    this.auth3.search.subscribe((val:any)=>{
+      this.searchKey = val;
+    })
+  }
+
+  addtocart(item: any){
+    this.auth3.addtoCart(item);
+  }
+
+
+
+
+
 
   home(){
     const localData = localStorage.getItem('token');
@@ -33,6 +76,14 @@ export class Home4Component {
     }
   }
 
+  filter(category:string){
+    this.filterCategory = this.productList
+    .filter((a:any)=>{
+      if(a.category == category || category==''){
+        return a;
+      }
+    })
+  }
 
   logOut(){
     
@@ -40,11 +91,14 @@ export class Home4Component {
     
   }
 
-  // search(event:any){
-  //   this.searchTerm = (event.target as HTMLInputElement).value;
-  //   console.log(this.searchTerm);
-  //   this.cartService.search.next(this.searchTerm);
-  // }
+  cart(){
+    
+    this.router.navigateByUrl('/cart');
+    
+  }
+
+  
+
 
 
 }
