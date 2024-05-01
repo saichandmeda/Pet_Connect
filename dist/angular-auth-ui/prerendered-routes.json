@@ -1,0 +1,18 @@
+{
+  "routes": [
+    "/appointment-list",
+    "/card",
+    "/cart",
+    "/dashboard",
+    "/forget",
+    "/home",
+    "/home2",
+    "/home3",
+    "/home4",
+    "/home5",
+    "/login",
+    "/post",
+    "/postdetails",
+    "/signup"
+  ]
+}
